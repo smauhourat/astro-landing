@@ -1,5 +1,11 @@
 ---
+interface Props {
+  title: string;
+}
+
 import "../styles/Layout.css";
+
+const { title } = Astro.props;
 ---
 
 <html lang='en'>
@@ -8,9 +14,11 @@ import "../styles/Layout.css";
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>Astro Landing</title>
+    <title>Astro Landing - {title}</title>
   </head>
   <body>
-    <slot />
+    <main class='mx-auto container'>
+      <slot />
+    </main>
   </body>
 </html>
